@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:futboa/core/utils/colors/colors.dart';
+import 'package:futboa/core/utils/colors/colors_util.dart';
+import 'package:futboa/core/utils/text_utils.dart';
 import 'package:futboa/features/presentation/stores/matches_store.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
@@ -71,7 +74,10 @@ class MatchesWidget extends StatelessWidget {
                           width: 128,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(16),
-                            color: Colors.white,
+                            color: colorConvert(store
+                                .leagueColor(
+                                    store.matches![index].competition.code)
+                                .value),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -81,10 +87,19 @@ class MatchesWidget extends StatelessWidget {
                               children: [
                                 Container(
                                   height: 24,
-                                  width: 56,
+                                  width: 64,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
-                                    color: Colors.black,
+                                    color: backgroundColor1,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      store.matches![index].status == "IN_PLAY"
+                                          ? 'Ao vivo'
+                                          : store.matchTime(
+                                              store.matches![index].utcDate),
+                                      style: textMatchStyleLight,
+                                    ),
                                   ),
                                 ),
                                 const SizedBox(
@@ -131,14 +146,36 @@ class MatchesWidget extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(store.matches![index].homeTeam.name
-                                                .length >
-                                            12
-                                        ? store
-                                            .matches![index].homeTeam.shortName
-                                        : store.matches![index].homeTeam.name),
                                     Text(
-                                        '${store.matches![index].score.fullTime.home}'),
+                                      store.matches![index].homeTeam.name
+                                                  .length >
+                                              12
+                                          ? store.matches![index].homeTeam
+                                              .shortName
+                                          : store.matches![index].homeTeam.name,
+                                      style: store.leagueColor(store
+                                                  .matches![index]
+                                                  .competition
+                                                  .code) ==
+                                              LeagueColor.pd
+                                          ? textMatchStyleDark
+                                          : textMatchStyleLight,
+                                    ),
+                                    Text(
+                                      store.matches![index].status ==
+                                                  "FINISHED" ||
+                                              store.matches![index].status ==
+                                                  "IN_PLAY"
+                                          ? '${store.matches![index].score.fullTime.home}'
+                                          : '0',
+                                      style: store.leagueColor(store
+                                                  .matches![index]
+                                                  .competition
+                                                  .code) ==
+                                              LeagueColor.pd
+                                          ? textMatchStyleDark
+                                          : textMatchStyleLight,
+                                    ),
                                   ],
                                 ),
                                 const SizedBox(
@@ -148,14 +185,36 @@ class MatchesWidget extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(store.matches![index].awayTeam.name
-                                                .length >
-                                            12
-                                        ? store
-                                            .matches![index].awayTeam.shortName
-                                        : store.matches![index].awayTeam.name),
                                     Text(
-                                        '${store.matches![index].score.fullTime.away}'),
+                                      store.matches![index].awayTeam.name
+                                                  .length >
+                                              12
+                                          ? store.matches![index].awayTeam
+                                              .shortName
+                                          : store.matches![index].awayTeam.name,
+                                      style: store.leagueColor(store
+                                                  .matches![index]
+                                                  .competition
+                                                  .code) ==
+                                              LeagueColor.pd
+                                          ? textMatchStyleDark
+                                          : textMatchStyleLight,
+                                    ),
+                                    Text(
+                                      store.matches![index].status ==
+                                                  "FINISHED" ||
+                                              store.matches![index].status ==
+                                                  "IN_PLAY"
+                                          ? '${store.matches![index].score.fullTime.away}'
+                                          : '0',
+                                      style: store.leagueColor(store
+                                                  .matches![index]
+                                                  .competition
+                                                  .code) ==
+                                              LeagueColor.pd
+                                          ? textMatchStyleDark
+                                          : textMatchStyleLight,
+                                    ),
                                   ],
                                 ),
                               ],
