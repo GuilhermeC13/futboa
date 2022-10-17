@@ -6,7 +6,11 @@ part 'team_model.g.dart';
 @JsonSerializable()
 class TeamModel extends TeamEntity {
   const TeamModel(
-      {required super.id, required super.name, required super.logo});
+      {required super.id,
+      required super.name,
+      required super.shortName,
+      required super.tla,
+      required super.crest});
 
   factory TeamModel.fromJson(Map<String, dynamic> json) =>
       _$TeamModelFromJson(json);

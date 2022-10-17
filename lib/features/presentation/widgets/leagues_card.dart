@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:futboa/features/presentation/pages/league_standing_page.dart';
 import 'package:futboa/features/presentation/stores/leagues_store.dart';
 import 'package:get_it/get_it.dart';
 
@@ -65,14 +66,13 @@ class LeaguesCard extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return InkWell(
                                 onTap: () {
-                                  // Navigator.of(context).push(
-                                  //   MaterialPageRoute(
-                                  //     builder: ((context) =>
-                                  //         LeagueStandingPage(
-                                  //           leagueId: 39,
-                                  //         )),
-                                  //   ),
-                                  // );
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: ((context) => LeagueStandingPage(
+                                            league: store.leagues![index],
+                                          )),
+                                    ),
+                                  );
                                 },
                                 child: CircleAvatar(
                                   radius: 30,

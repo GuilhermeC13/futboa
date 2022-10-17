@@ -1,22 +1,44 @@
 import 'package:equatable/equatable.dart';
 import 'package:futboa/features/domain/entities/team_entity.dart';
-import 'package:futboa/features/domain/entities/team_stats_entity.dart';
 
 class StandingEntity extends Equatable {
-  final int rank;
+  final int position;
   final TeamEntity team;
+  final int playedGames;
+  final String form;
+  final int won;
+  final int draw;
+  final int lost;
   final int points;
-  final int goalsDiff;
-  final TeamStatsEntity all;
+  final int goalsFor;
+  final int goalsAgainst;
+  final int goalDifference;
 
-  const StandingEntity({
-    required this.rank,
-    required this.team,
-    required this.points,
-    required this.goalsDiff,
-    required this.all,
-  });
+  const StandingEntity(
+      {required this.position,
+      required this.team,
+      required this.playedGames,
+      required this.form,
+      required this.won,
+      required this.draw,
+      required this.lost,
+      required this.points,
+      required this.goalsFor,
+      required this.goalsAgainst,
+      required this.goalDifference});
 
   @override
-  List<Object?> get props => [rank, team, points, goalsDiff, all];
+  List<Object?> get props => [
+        position,
+        team,
+        playedGames,
+        form,
+        won,
+        draw,
+        lost,
+        points,
+        goalsFor,
+        goalsAgainst,
+        goalDifference
+      ];
 }

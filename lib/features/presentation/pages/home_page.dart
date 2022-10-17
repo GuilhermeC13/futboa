@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:futboa/core/utils/colors/colors.dart';
-import 'package:futboa/features/presentation/stores/leagues_store.dart';
 import 'package:futboa/features/presentation/widgets/leagues_card.dart';
 import 'package:futboa/features/presentation/widgets/matches_widget.dart';
-import 'package:get_it/get_it.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

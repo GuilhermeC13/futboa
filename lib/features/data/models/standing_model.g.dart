@@ -8,18 +8,30 @@ part of 'standing_model.dart';
 
 StandingModel _$StandingModelFromJson(Map<String, dynamic> json) =>
     StandingModel(
-      rank: json['rank'] as int,
+      position: json['position'] as int,
       team: TeamModel.fromJson(json['team'] as Map<String, dynamic>),
+      playedGames: json['playedGames'] as int,
+      form: json['form'] as String,
+      won: json['won'] as int,
+      draw: json['draw'] as int,
+      lost: json['lost'] as int,
       points: json['points'] as int,
-      goalsDiff: json['goalsDiff'] as int,
-      all: TeamStatsModel.fromJson(json['all'] as Map<String, dynamic>),
+      goalsFor: json['goalsFor'] as int,
+      goalsAgainst: json['goalsAgainst'] as int,
+      goalDifference: json['goalDifference'] as int,
     );
 
 Map<String, dynamic> _$StandingModelToJson(StandingModel instance) =>
     <String, dynamic>{
-      'rank': instance.rank,
+      'position': instance.position,
+      'playedGames': instance.playedGames,
+      'form': instance.form,
+      'won': instance.won,
+      'draw': instance.draw,
+      'lost': instance.lost,
       'points': instance.points,
-      'goalsDiff': instance.goalsDiff,
+      'goalsFor': instance.goalsFor,
+      'goalsAgainst': instance.goalsAgainst,
+      'goalDifference': instance.goalDifference,
       'team': instance.team,
-      'all': instance.all,
     };

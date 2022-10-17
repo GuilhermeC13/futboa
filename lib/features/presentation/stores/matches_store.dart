@@ -103,13 +103,6 @@ abstract class _MatchesStoreBase with Store {
     }
   }
 
-  String matchTime(String date) {
-    var parsedDate = DateTime.parse(date);
-    String matchTime =
-        '${parsedDate.subtract(const Duration(hours: 3)).hour}:${parsedDate.minute}';
-    return matchTime;
-  }
-
   @action
   getMatchesByDate() async {
     DateTime localDate = DateTime.now();

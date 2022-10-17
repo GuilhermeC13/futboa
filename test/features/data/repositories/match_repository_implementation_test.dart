@@ -6,7 +6,7 @@ import 'package:futboa/features/data/datasources/match_datasource.dart';
 import 'package:futboa/features/data/repositories/match_repository_implementation.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../mocks/match_model_mock.dart';
+import '../../../mocks/model_mocks/match_model_mock.dart';
 
 class MockLeagueDatasource extends Mock implements MatchDatasource {}
 

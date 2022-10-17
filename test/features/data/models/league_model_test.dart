@@ -7,7 +7,7 @@ import 'package:futboa/features/data/models/season_model.dart';
 import 'package:futboa/features/domain/entities/league_entity.dart';
 
 import '../../../mocks/league_json_mock.dart';
-import '../../../mocks/league_model_mock.dart';
+import '../../../mocks/model_mocks/league_model_mock.dart';
 
 void main() {
   test('should be a subclass of LeagueEntity', () {

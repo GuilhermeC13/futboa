@@ -6,9 +6,17 @@ import 'team_entity_mock.dart';
 
 const List<StandingEntity> tStandings = [
   StandingEntity(
-      rank: 1, team: tTeamEntity, points: 25, goalsDiff: 10, all: tAll),
-  StandingEntity(
-      rank: 1, team: tTeamEntity, points: 25, goalsDiff: 10, all: tAll)
+      position: 1,
+      team: tTeamEntity,
+      playedGames: 30,
+      form: "W,W,W,W,W",
+      won: 19,
+      draw: 9,
+      lost: 2,
+      points: 66,
+      goalsFor: 52,
+      goalsAgainst: 20,
+      goalDifference: 32),
 ];
 
 const tAll =

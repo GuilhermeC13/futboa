@@ -44,8 +44,10 @@ abstract class _LeaguesStoreBase with Store {
 
     leaguesAnswer = await _leaguesEntityFuture;
 
-    leaguesAnswer!
-        .fold((error) => ServerFailure(), (success) => leagues = success);
+    leaguesAnswer!.fold(
+        (error) => ServerFailure(),
+        (success) => leagues =
+            success.where((element) => element.type == 'LEAGUE').toList());
   }
 
   void getLeagues() {

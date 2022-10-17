@@ -4,7 +4,7 @@ import 'package:futboa/features/domain/entities/match_entity.dart';
 import 'package:futboa/features/domain/entities/score_entity.dart';
 import 'package:futboa/features/domain/entities/score_time_entity.dart';
 import 'package:futboa/features/domain/entities/season_entity.dart';
-import 'package:futboa/features/domain/entities/team_match_entity.dart';
+import 'package:futboa/features/domain/entities/team_entity.dart';
 
 const tListMatchEntity = [
   MatchEntity(
@@ -33,14 +33,14 @@ const tListMatchEntity = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-26T01:32:00Z",
-    homeTeam: TeamMatchEntity(
+    homeTeam: TeamEntity(
       id: 6685,
       name: "Santos FC",
       shortName: "Santos",
       tla: "SAN",
       crest: "https://crests.football-data.org/6685.svg",
     ),
-    awayTeam: TeamMatchEntity(
+    awayTeam: TeamEntity(
       id: 1768,
       name: "CA Paranaense",
       shortName: "Paranaense",
@@ -86,14 +86,14 @@ const tListMatchEntity = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-26T01:32:00Z",
-    homeTeam: TeamMatchEntity(
+    homeTeam: TeamEntity(
       id: 6685,
       name: "Santos FC",
       shortName: "Santos",
       tla: "SAN",
       crest: "https://crests.football-data.org/6685.svg",
     ),
-    awayTeam: TeamMatchEntity(
+    awayTeam: TeamEntity(
       id: 1768,
       name: "CA Paranaense",
       shortName: "Paranaense",
@@ -139,14 +139,14 @@ const tListMatchEntity = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-26T01:32:00Z",
-    homeTeam: TeamMatchEntity(
+    homeTeam: TeamEntity(
       id: 6685,
       name: "Santos FC",
       shortName: "Santos",
       tla: "SAN",
       crest: "https://crests.football-data.org/6685.svg",
     ),
-    awayTeam: TeamMatchEntity(
+    awayTeam: TeamEntity(
       id: 1768,
       name: "CA Paranaense",
       shortName: "Paranaense",

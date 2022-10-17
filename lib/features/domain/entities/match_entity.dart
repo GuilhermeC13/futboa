@@ -3,7 +3,7 @@ import 'package:futboa/features/domain/entities/area_entity.dart';
 import 'package:futboa/features/domain/entities/league_entity.dart';
 import 'package:futboa/features/domain/entities/score_entity.dart';
 import 'package:futboa/features/domain/entities/season_entity.dart';
-import 'package:futboa/features/domain/entities/team_match_entity.dart';
+import 'package:futboa/features/domain/entities/team_entity.dart';
 
 class MatchEntity extends Equatable {
   final AreaEntity area;
@@ -16,8 +16,8 @@ class MatchEntity extends Equatable {
   final String stage;
   final String? group;
   final String lastUpdated;
-  final TeamMatchEntity homeTeam;
-  final TeamMatchEntity awayTeam;
+  final TeamEntity homeTeam;
+  final TeamEntity awayTeam;
   final ScoreEntity score;
 
   const MatchEntity({

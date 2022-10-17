@@ -9,7 +9,7 @@ import 'package:mocktail/mocktail.dart';
 
 import '../../../mocks/http_client_mock/http_client_mock.dart';
 import '../../../mocks/league_json_mock.dart';
-import '../../../mocks/league_model_mock.dart';
+import '../../../mocks/model_mocks/league_model_mock.dart';
 
 void main() {
   late LeagueDatasource datasource;

@@ -3,7 +3,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:futboa/core/utils/colors/colors.dart';
 import 'package:futboa/core/utils/colors/colors_util.dart';
+import 'package:futboa/core/utils/date_utils.dart';
 import 'package:futboa/core/utils/text_utils.dart';
+import 'package:futboa/features/presentation/pages/match_page.dart';
 import 'package:futboa/features/presentation/stores/matches_store.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
@@ -61,14 +63,17 @@ class MatchesWidget extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
-                          // Navigator.of(context).push(
-                          //   MaterialPageRoute(
-                          //     builder: ((context) =>
-                          //         LeagueStandingPage(
-                          //           leagueId: 39,
-                          //         )),
-                          //   ),
-                          // );
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: ((context) => MatchPage(
+                                    match: store.matches![index],
+                                    leagueColor: store
+                                        .leagueColor(store
+                                            .matches![index].competition.code)
+                                        .value,
+                                  )),
+                            ),
+                          );
                         },
                         child: Container(
                           width: 128,
@@ -87,7 +92,7 @@ class MatchesWidget extends StatelessWidget {
                               children: [
                                 Container(
                                   height: 24,
-                                  width: 64,
+                                  width: 88,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(16),
                                     color: backgroundColor1,
@@ -96,8 +101,11 @@ class MatchesWidget extends StatelessWidget {
                                     child: Text(
                                       store.matches![index].status == "IN_PLAY"
                                           ? 'Ao vivo'
-                                          : store.matchTime(
-                                              store.matches![index].utcDate),
+                                          : store.matches![index].status ==
+                                                  "FINISHED"
+                                              ? 'Fim de jogo'
+                                              : matchTime(store
+                                                  .matches![index].utcDate),
                                       style: textMatchStyleLight,
                                     ),
                                   ),
@@ -146,20 +154,19 @@ class MatchesWidget extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      store.matches![index].homeTeam.name
-                                                  .length >
-                                              12
-                                          ? store.matches![index].homeTeam
-                                              .shortName
-                                          : store.matches![index].homeTeam.name,
-                                      style: store.leagueColor(store
-                                                  .matches![index]
-                                                  .competition
-                                                  .code) ==
-                                              LeagueColor.pd
-                                          ? textMatchStyleDark
-                                          : textMatchStyleLight,
+                                    Flexible(
+                                      child: Text(
+                                        store
+                                            .matches![index].homeTeam.shortName,
+                                        style: store.leagueColor(store
+                                                    .matches![index]
+                                                    .competition
+                                                    .code) ==
+                                                LeagueColor.pd
+                                            ? textMatchStyleDark
+                                            : textMatchStyleLight,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
                                     ),
                                     Text(
                                       store.matches![index].status ==
@@ -185,20 +192,19 @@ class MatchesWidget extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      store.matches![index].awayTeam.name
-                                                  .length >
-                                              12
-                                          ? store.matches![index].awayTeam
-                                              .shortName
-                                          : store.matches![index].awayTeam.name,
-                                      style: store.leagueColor(store
-                                                  .matches![index]
-                                                  .competition
-                                                  .code) ==
-                                              LeagueColor.pd
-                                          ? textMatchStyleDark
-                                          : textMatchStyleLight,
+                                    Flexible(
+                                      child: Text(
+                                        store
+                                            .matches![index].awayTeam.shortName,
+                                        style: store.leagueColor(store
+                                                    .matches![index]
+                                                    .competition
+                                                    .code) ==
+                                                LeagueColor.pd
+                                            ? textMatchStyleDark
+                                            : textMatchStyleLight,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
                                     ),
                                     Text(
                                       store.matches![index].status ==

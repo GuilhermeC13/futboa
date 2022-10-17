@@ -18,10 +18,8 @@ MatchModel _$MatchModelFromJson(Map<String, dynamic> json) => MatchModel(
       stage: json['stage'] as String,
       group: json['group'] as String?,
       lastUpdated: json['lastUpdated'] as String,
-      homeTeam:
-          TeamMatchModel.fromJson(json['homeTeam'] as Map<String, dynamic>),
-      awayTeam:
-          TeamMatchModel.fromJson(json['awayTeam'] as Map<String, dynamic>),
+      homeTeam: TeamModel.fromJson(json['homeTeam'] as Map<String, dynamic>),
+      awayTeam: TeamModel.fromJson(json['awayTeam'] as Map<String, dynamic>),
       score: ScoreModel.fromJson(json['score'] as Map<String, dynamic>),
     );
 

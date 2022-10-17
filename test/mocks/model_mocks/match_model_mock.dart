@@ -4,7 +4,7 @@ import 'package:futboa/features/data/models/match_model.dart';
 import 'package:futboa/features/data/models/score_model.dart';
 import 'package:futboa/features/data/models/score_time_model.dart';
 import 'package:futboa/features/data/models/season_model.dart';
-import 'package:futboa/features/data/models/team_match_model.dart';
+import 'package:futboa/features/data/models/team_model.dart';
 
 const tMatchModelMock = MatchModel(
   area: AreaModel(
@@ -32,14 +32,14 @@ const tMatchModelMock = MatchModel(
   stage: "REGULAR_SEASON",
   group: null,
   lastUpdated: "2022-09-26T01:32:00Z",
-  homeTeam: TeamMatchModel(
+  homeTeam: TeamModel(
     id: 6685,
     name: "Santos FC",
     shortName: "Santos",
     tla: "SAN",
     crest: "https://crests.football-data.org/6685.svg",
   ),
-  awayTeam: TeamMatchModel(
+  awayTeam: TeamModel(
     id: 1768,
     name: "CA Paranaense",
     shortName: "Paranaense",
@@ -87,14 +87,14 @@ const tListMatchModelMock = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-28T21:24:22Z",
-    homeTeam: TeamMatchModel(
+    homeTeam: TeamModel(
       id: 6685,
       name: "Santos FC",
       shortName: "Santos",
       tla: "SAN",
       crest: "https://crests.football-data.org/6685.svg",
     ),
-    awayTeam: TeamMatchModel(
+    awayTeam: TeamModel(
       id: 1768,
       name: "CA Paranaense",
       shortName: "Paranaense",
@@ -140,14 +140,14 @@ const tListMatchModelMock = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-22T01:32:00Z",
-    homeTeam: TeamMatchModel(
+    homeTeam: TeamModel(
       id: 4241,
       name: "Coritiba FBC",
       shortName: "Coritiba",
       tla: "COR",
       crest: "https://crests.football-data.org/4241.svg",
     ),
-    awayTeam: TeamMatchModel(
+    awayTeam: TeamModel(
       id: 1837,
       name: "Ceará SC",
       shortName: "Ceará",
@@ -193,14 +193,14 @@ const tListMatchModelMock = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-22T01:32:00Z",
-    homeTeam: TeamMatchModel(
+    homeTeam: TeamModel(
       id: 3984,
       name: "Fortaleza EC",
       shortName: "Fortaleza",
       tla: "FEC",
       crest: "https://crests.football-data.org/3984.png",
     ),
-    awayTeam: TeamMatchModel(
+    awayTeam: TeamModel(
       id: 1783,
       name: "CR Flamengo",
       shortName: "Flamengo",
@@ -246,14 +246,14 @@ const tListMatchModelMock = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-22T01:32:00Z",
-    homeTeam: TeamMatchModel(
+    homeTeam: TeamModel(
       id: 1779,
       name: "SC Corinthians Paulista",
       shortName: "Corinthians",
       tla: "COR",
       crest: "https://crests.football-data.org/1779.svg",
     ),
-    awayTeam: TeamMatchModel(
+    awayTeam: TeamModel(
       id: 3988,
       name: "AC Goianiense",
       shortName: "AC Goianiense",
@@ -299,14 +299,14 @@ const tListMatchModelMock = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-22T01:32:00Z",
-    homeTeam: TeamMatchModel(
+    homeTeam: TeamModel(
       id: 1765,
       name: "Fluminense FC",
       shortName: "Fluminense",
       tla: "FLU",
       crest: "https://crests.football-data.org/1765.svg",
     ),
-    awayTeam: TeamMatchModel(
+    awayTeam: TeamModel(
       id: 4245,
       name: "EC Juventude",
       shortName: "Juventude",
@@ -352,14 +352,14 @@ const tListMatchModelMock = [
     stage: "REGULAR_SEASON",
     group: null,
     lastUpdated: "2022-09-22T01:32:00Z",
-    homeTeam: TeamMatchModel(
+    homeTeam: TeamModel(
       id: 4289,
       name: "Cuiabá EC",
       shortName: "Cuiabá EC",
       tla: "CUI",
       crest: "https://crests.football-data.org/4289_large.png",
     ),
-    awayTeam: TeamMatchModel(
+    awayTeam: TeamModel(
       id: 1838,
       name: "América FC",
       shortName: "América (MG)",

@@ -7,11 +7,11 @@ import 'package:futboa/features/data/models/match_model.dart';
 import 'package:futboa/features/data/models/score_model.dart';
 import 'package:futboa/features/data/models/score_time_model.dart';
 import 'package:futboa/features/data/models/season_model.dart';
-import 'package:futboa/features/data/models/team_match_model.dart';
+import 'package:futboa/features/data/models/team_model.dart';
 import 'package:futboa/features/domain/entities/match_entity.dart';
 
 import '../../../mocks/match_json_mock.dart';
-import '../../../mocks/match_model_mock.dart';
+import '../../../mocks/model_mocks/match_model_mock.dart';
 
 void main() {
   test('should be a subclass of MatchEntity', () {
@@ -55,14 +55,14 @@ void main() {
       "stage": "REGULAR_SEASON",
       "group": null,
       "lastUpdated": "2022-09-26T01:32:00Z",
-      "homeTeam": const TeamMatchModel(
+      "homeTeam": const TeamModel(
         id: 6685,
         name: "Santos FC",
         shortName: "Santos",
         tla: "SAN",
         crest: "https://crests.football-data.org/6685.svg",
       ),
-      "awayTeam": const TeamMatchModel(
+      "awayTeam": const TeamModel(
         id: 1768,
         name: "CA Paranaense",
         shortName: "Paranaense",
